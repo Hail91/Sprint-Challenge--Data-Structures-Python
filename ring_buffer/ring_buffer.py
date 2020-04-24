@@ -14,7 +14,7 @@ class RingBuffer:
             # Assign the head of the list to the current value
             self.current = self.storage.head
         # Also need to have a check to determine if ring buffer is at capacity, if so, we need to drop the oldest item off the end before inserting the new item.
-        elif len(self.storage) == self.capacity:
+        elif len(self.storage) is self.capacity:
             # Assign current head of list to oldest variable (Since it'll be the oldest item in the list)
             oldest = self.storage.head
             # Remove from head (the oldest item) 
@@ -38,7 +38,7 @@ class RingBuffer:
         if item.next is not None:
             # Create a variable called next_item and assign it to that next item in the list
             next_item = item.next
-            # Otherwise, assign the head item of the list to the next_item variable
+            # Otherwise, if there is no next item, assign the head item of the list to the next_item variable
         else:
             next_item = self.storage.head
         # As long as the next_item variable is not equal to our current item (Which we already appended)
